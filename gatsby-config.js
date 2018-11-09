@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Meet GatsbyJS',
+    description: 'GatsbyJS talk on learny GatsbyJS',
+    siteUrl: 'https://nervous-banach-1ed5e1.netlify.com'
   },
   plugins: [
     'gatsby-plugin-offline',
@@ -9,6 +11,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -35,6 +38,7 @@ module.exports = {
         name: 'slides'
       }
     },
+    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-netlify'
   ],
 }
