@@ -35,5 +35,6 @@ module.exports = {
         name: 'slides'
       }
     },
+    'gatsby-plugin-netlify'
   ],
 }
