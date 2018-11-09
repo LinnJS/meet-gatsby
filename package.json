@@ -3,6 +3,7 @@
   "description": "Meet GatsbyJS",
   "version": "1.0.0",
   "author": "Justin Linn <LinnJSConsulting@gmail.com>",
+  "url": "https://www.meetgatsby.tech",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.19",
@@ -48,6 +49,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "TBA"
+    "url": "https://www.meetgatsby.tech/"
   }
 }

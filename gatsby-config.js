@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Meet GatsbyJS',
-    description: 'GatsbyJS talk on learny GatsbyJS',
-    siteUrl: 'https://nervous-banach-1ed5e1.netlify.com'
+    description: 'GatsbyJS talk on learning GatsbyJS',
+    siteUrl: 'https://www.meetgatsby.tech'
   },
   plugins: [
     'gatsby-plugin-offline',
@@ -15,13 +15,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'meet-gatsby',
+        short_name: 'MeetGatsby',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/gatsby-icon.png',
       },
     },
     {
