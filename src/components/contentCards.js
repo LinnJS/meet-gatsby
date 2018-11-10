@@ -29,7 +29,7 @@ const SlideLayout = styled.article`
   }
 `
 
-const Slide = () => (
+const ContentCards = () => (
   <StaticQuery
     query={LISTING_QUERY}
     render={({ allMarkdownRemark }) =>
@@ -38,9 +38,9 @@ const Slide = () => (
           <Link to={`/slides${node.frontmatter.slug}`}>
             <h2>{node.frontmatter.title}</h2>
           </Link>
-          <p>{node.frontmatter.date}</p>
+          <p>{`Position: ${node.frontmatter.date}`}</p>
           <p>{node.excerpt}</p>
-          <Link class="read-more" to={`/slides${node.frontmatter.slug}`}>
+          <Link className="read-more" to={`/slides${node.frontmatter.slug}`}>
             Read More
           </Link>
         </SlideLayout>
@@ -49,20 +49,17 @@ const Slide = () => (
   />
 )
 
-export default Slide
+export default ContentCards
 
 const LISTING_QUERY = graphql`
   query BlogPostListing {
-    allMarkdownRemark(
-      limit: 10
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
+    allMarkdownRemark(sort: { order: ASC, fields: [id] }) {
       edges {
         node {
           excerpt
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
+            date
             slug
           }
         }

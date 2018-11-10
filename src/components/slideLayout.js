@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+import styled from 'styled-components'
 import Layout from './layout.js'
 
-// Static Query
-// Used anywhere, does not accept variables, can't use context
+const SlideNav = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`
 
 export default class SlideLayout extends Component {
   render() {
@@ -18,13 +22,19 @@ export default class SlideLayout extends Component {
             __html: markdownRemark.html,
           }}
         />
+        <SlideNav>
+          {markdownRemark.frontmatter.lastSlide ? (
+            <Link to={markdownRemark.frontmatter.lastSlide}>Last Slide</Link>
+          ) : null}
+          {markdownRemark.frontmatter.nextSlide ? (
+            <Link to={markdownRemark.frontmatter.nextSlide}>Next Slide</Link>
+          ) : null}
+        </SlideNav>
       </Layout>
     )
   }
 }
 
-// Page Query, can accept variables
-// Must be used on pages
 export const query = graphql`
   query PostQuery($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
@@ -33,7 +43,16 @@ export const query = graphql`
         title
         date
         slug
+        nextSlide
+        lastSlide
       }
     }
+    file(relativePath: { regex: "/cms/" }) {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
   }
 `

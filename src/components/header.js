@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Icon from '../images/gatsby-icon.png'
 
 const HeaderWrapper = styled.div`
   background: #f3f1f6;
+  display: flex;
+  justify-content: space-around;
 `
 
 const HeaderContainer = styled.div`
@@ -16,27 +18,30 @@ const HeaderContainer = styled.div`
 
   img {
     height: 100px;
-    margin: 10px 50px;
+    margin: 10px 20px;
   }
 
   h1 {
     margin: 0;
   }
 `
+export default class Header extends Component {
+  render() {
+    const { siteTitle } = this.props
 
-const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
-    <HeaderContainer>
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <img src={Icon} alt="Gatsby Icon" />
-      </Link>
-      <h1>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          {siteTitle}
-        </Link>
-      </h1>
-    </HeaderContainer>
-  </HeaderWrapper>
-)
-
-export default Header
+    return (
+      <HeaderWrapper>
+        <HeaderContainer>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <img src={Icon} alt="Gatsby Icon" />
+          </Link>
+          <h1>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              {siteTitle}
+            </Link>
+          </h1>
+        </HeaderContainer>
+      </HeaderWrapper>
+    )
+  }
+}

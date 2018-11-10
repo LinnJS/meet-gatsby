@@ -1,7 +1,8 @@
 ---
 slug: '/first-slide'
 title: 'Our First Slide'
-date: '2018-11-04'
+date: '1'
+nextSlide: '/slides/second-slide/'
 ---
 
 # Slide One
