@@ -6,8 +6,6 @@ import Layout from '../components/layout'
 import ContentCards from '../components/contentCards'
 import { Spring } from 'react-spring'
 
-const heightMediaQuery = window.screen.height >= 812 ? 600 : 150
-
 const IndexPage = ({ location }) => (
   <StaticQuery
     query={graphql`
@@ -24,7 +22,7 @@ const IndexPage = ({ location }) => (
     render={data => (
       <>
         <Layout location={location}>
-          <Spring from={{ height: 200 }} to={{ height: heightMediaQuery }}>
+          <Spring from={{ height: 200 }} to={{ height: 600 }}>
             {styles => (
               <div style={{ overflow: 'hidden', ...styles }}>
                 <Img fluid={data.file.childImageSharp.fluid} />
