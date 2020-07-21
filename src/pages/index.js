@@ -29,7 +29,9 @@ const IndexPage = ({ location }) => (
               </div>
             )}
           </Spring>
-          <a href="https://drive.google.com/open?id=1sk-nLaNQhZcD7Nb9_KxExF37H1ZkNIDxyMsCdsrOlyE">Google Slides</a>
+          <a href="https://drive.google.com/open?id=1sk-nLaNQhZcD7Nb9_KxExF37H1ZkNIDxyMsCdsrOlyE">
+            Google Slides
+          </a>
           <a href="https://github.com/LinnJS/meet-gatsby">GitHub Repo</a>
           <ContentCards />
         </Layout>

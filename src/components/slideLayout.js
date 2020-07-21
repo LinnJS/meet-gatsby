@@ -48,11 +48,11 @@ export const query = graphql`
       }
     }
     file(relativePath: { regex: "/cms/" }) {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
+      }
+    }
   }
 `
